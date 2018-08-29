@@ -1,0 +1,5 @@
+node_modules/
+public/js/app.min.*
+public/js/bundle.min.*
+stats.json
+npm-debug\.log
