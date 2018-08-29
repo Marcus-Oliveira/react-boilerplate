@@ -12,7 +12,7 @@ let definirUrlAPIsConformeAmbinete = () => {
 
     //Configurar o estado inicial com os endereços de DEV
     let APIs = {
-        'appseguros'  : 'https://appsegurosgatewaydev.azure-api.net/',
+        'api'  : '',
     }
 
     /**
@@ -28,54 +28,28 @@ let definirUrlAPIsConformeAmbinete = () => {
         case 'development':
             return {
                 ...APIs, 
-                'appseguros'  : 'https://appsegurosgatewaydev.azure-api.net/'
+                'api'  : ''
             }
             break
         case 'hml':
             return {
                 ...APIs, 
-                'appseguros'  : 'https://gateway-hml.zim.com.vc/'
+                'api'  : ''
             }
             break
         case 'production':
             return {
                 ...APIs, 
-                'appseguros'  : 'https://gateway.zim.com.vc/'
+                'api'  : ''
             }
             break
         default:
             return {
                 ...APIs, 
-                'appseguros'  : 'https://appsegurosgatewaydev.azure-api.net/'
+                'api'  : ''
             }
             break
     }
 }
 
-export const urlAPIs = definirUrlAPIsConformeAmbinete()
-
-//Pegando o token na url
-let getParamToken = () => {    
-    let url = new URL(window.location.href)
-    
-    if(url.searchParams.get("token") != null){
-		return url.searchParams.get("token")
-	}else{
-        return 'tokenTeste'
-    }
-} 
-export const token = getParamToken()
-
-
-//Pegando o idPedido na url
-let getParamIdPedido = () => {    
-    let url = new URL(window.location.href)
-    
-    if(url.searchParams.get("idPedido") != null){
-		return url.searchParams.get("idPedido")
-	}else{
-        return 'idPedidoTeste'
-    }
-} 
-export const idPedido = getParamIdPedido()
-
+export const urlAPIs = definirUrlAPIsConformeAmbiente()
